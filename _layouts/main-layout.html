@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Header and Style information -->
+  <head>
+    <!-- Part that shows on Tab -->
+    <title> Mackenzie Ticoras</title>
+
+    <!-- Include Style Information -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- External Style Sheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.15.4/css/all.css">
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"> <a class="nav-link active" aria-current="page" href="/Mackenzie-Personal-Website/">Home</a></li>
+            <li class="nav-item"> <a class="nav-link" href="./Research">Research</a></li>
+            <li class="nav-item"> <a class="nav-link" href="./publications-by-year">Publications</a></li>
+            <li class="nav-item"> <a class="nav-link" href="./leadership-and-outreach">Academic, Outreach, and Leadership Experience</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <!-- Determines Page Content -->
+  {% if page.content_style == "github_markdown" %} <div class="uk-container markdown-body">
+  {% else %} <div class="uk-container">
+  {% endif %} {{ content }}
+</body>
+
+<!-- Footer -->
+<div class="footer">
+<footer class="text-center text-white" style="background-color: #f1f1f1;">
+    <div class="container pt-4">
+      <section class="mb-4">
+        <!-- Google -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="https://www.google.com/search?q=mackenzie+ticoras&rlz=1C1VDKB_enUS1006US1006&oq=Mackenzie+Ticoras&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMg0IARAuGK8BGMcBGIAEMgYIAhBFGDsyBggDEEUYPDIGCAQQRRg90gEIMzAxM2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8"
+          role="button"
+          data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>  
+        <!-- Linkedin -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="https://www.linkedin.com/in/mackenzie-scott-121697242/"
+          role="button"
+          data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+        <!-- Github -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="https://github.com/kenzerkay"
+          role="button"
+          data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+        <!-- Orcid -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" 
+        href="https://orcid.org/0009-0004-7242-0204"
+        role="button"
+        data-mdb-ripple-color="dark"><i class="fab fa-orcid"></i></a>
+      </section>
+    </div>
+
+    <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        &copy; <script>document.write(new Date().getFullYear())</script> Mackenzie Ticoras
+    </div>
+  </footer>
+
+</div>
