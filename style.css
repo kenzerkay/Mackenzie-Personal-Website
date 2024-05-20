@@ -3,12 +3,12 @@
 html, body{
     background-color: white; 
     border: 10px solid white; /*Keep these the same color */
-    }  
+}  
 
-h1{color: black;}
-h2{color: black;}
-h3{color: black;}
-h4{color: black;}
-p {color: gray ;}
+h1{color: black; font-size: 45px;}
+h2{color: black; font-size: 35px;}
+h3{color: black; font-size: 30px;}
+h4{color: black; font-size: 25px;}
+p {color: gray ; font-size: 18px;}
 
 
