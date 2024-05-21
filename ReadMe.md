@@ -1,6 +1,5 @@
 # Personal Website Notes
 
-
 ## Run local 
 
 Download of Jekyll and all its prerequesites: 
