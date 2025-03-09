@@ -2,11 +2,11 @@
 
 ## Run local 
 
-Download of Jekyll and all its prerequesites: 
+Download of Jekyll and all its prerequisites: 
 
         https://jekyllrb.com/docs/ 
 
-Run on local enviornment with: 
+Run on local environment with: 
 
         bundle exec jekyll serve
 

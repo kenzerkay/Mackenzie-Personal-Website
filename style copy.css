@@ -7,34 +7,20 @@
 }
 
 html, body{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to right, rgba(255, 105, 180, 0.5), rgba(138, 43, 226, 0.5)); /* Gradient for the border */
-    z-index: -1;
-    position: relative;
-    padding: 5px;
-    background-color: #fff; /* Solid background color */
+    background: linear-gradient(to right, rgba(255, 105, 180, 1), rgba(138, 43, 226, 1));
+    /* background-color: whitesmoke;  */
+    border: 10px solid whitesmoke; /*Keep these the same color */
 }  
 
 .footer{
     background-color:rgba(150, 5, 90, 0.35); 
 }
 
-
-h1 {color: black; font-size: 45px;}
-h2 {color: black; font-size: 35px;}
-h3 {color: black; font-size: 30px;}
-h4 {color: black; font-size: 25px;}
-p  {color: black; font-size: 18px;}
-
-/* h1{color: rgba(150, 5, 90, 1); font-size: 45px;}
+h1{color: rgba(150, 5, 90, 1); font-size: 45px;}
 h2{color: rgba(220, 80, 150, 0.75); font-size: 35px;}
 h3{color: rgba(255, 80, 190, 0.75); font-size: 30px;}
 h4{color: rgba(255, 110, 190, 0.75); font-size: 25px;}
-p {color: rgb(60, 60, 60); font-size: 18px;} */
+p {color: rgb(60, 60, 60); font-size: 18px;}
 
 .grid-container {
     display: grid;
@@ -50,7 +36,6 @@ p {color: rgb(60, 60, 60); font-size: 18px;} */
     /* font-size: 10px; */
     text-align: left;
 }
-
 
 
 

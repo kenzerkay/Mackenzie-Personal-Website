@@ -2,73 +2,138 @@
 """
 -- shamelessly stolen from Mike Zingale
 """
-
 import parser
 
+# Read in paper and presentation bibliographies 
 papers = parser.parse_bibfile("papers.bib")
+pres = parser.parse_bibfile("presentations.bib")
 
-for p in papers:
-    print(p)
+# Print Titles of Papers and Presentations on website 
+print("\nPAPERS\n")
+for p in papers: print(p)
 
+print("\nPRES\n")
+for pr in pres: print(pr)
 
 # sorted by date
 tf = open("pub_template.html", "r")
-dh = open("publications-by-year.html", "w")
+dh = open("publications-and-pres.html", "w")
 
-current_year = 3000
+### ---------------------------------------------- ###
+### ------------ Iterate over Papers ------------- ###
+### ---------------------------------------------- ###
+
+# Set initial parameters to pull out years 
+current_year = 0
 first = True
+papers_list = ""
 
-ostr = ""
-
-# by year
-years = list(set([p.year for p in papers]))
-years.sort(reverse=True)
-
+# Loop over papers
 for p in papers:
-    if p.year < current_year:
-        if not first:
-            ostr += "</dl>\n"
-        else:
-            first = False
+    if not first: papers_list += "</dl>\n"
+    else: first = False
 
-        ostr += "<p><h2><a name='{}'></a>{}</h2>\n\n".format(p.year, p.year)
-        ostr += "<dl>\n"
+    papers_list += "<p><h2><a name='{}'></a>{}</h2>\n\n".format(p.year, p.year)
+    papers_list += "<dl>\n"
 
-        current_year = p.year
+    current_year = p.year
 
     t, o, l = p.jstring()
-    if not l == "":
-        ostr += "<dt><a href='{}'>{}</a></dt>\n".format(l, t)
-    else:
-        ostr += "<dt>{}</dt>\n".format(t)
+    if not l == "": papers_list += "<dt><a href='{}'>{}</a></dt>\n".format(l, t)
+    else: papers_list += "<dt>{}</dt>\n".format(t)
 
-    ostr += "<dd>{}</dd>\n\n".format(o)
+    papers_list += "<dd>{}</dd>\n\n".format(o)
 
-ostr += "</dl>\n\n"
+papers_list += "</dl>\n\n"
 
-year_index = "<ul>\n"
-for n, y in enumerate(years):
-    if n % 3 == 0:
-        year_index += "<li>"
-    else:
-        year_index += "&nbsp;&nbsp;&nbsp;"
+### ---------------------------------------------- ###
+### -------- Iterate over Presentations ---------- ###
+### ---------------------------------------------- ###
 
-    year_index += "<a href='#{}'>{}</a>".format(y, y)
+# Reset initial parameters to pull out years 
+current_year = 0
+first = True
+pres_list = ""
 
-    if n % 3 == 2:
-        year_index += "</li>\n"
+# Loop over presentations 
+for pr in pres:
+    if not first: pres_list += "</dl>\n"
+    else: first = False
 
-if not len(year_index) % 3 == 0: 
-    year_index += "</li>\n"
+    pres_list += "<p><h2><a name='{}'></a>{}</h2>\n\n".format(pr.year, pr.year)
+    pres_list += "<dl>\n"
 
-year_index += "</ul>\n"
+    current_year = pr.year
+
+    t, o, l = pr.jstring()
+    if not l == "": pres_list += "<dt><a href='{}'>{}</a></dt>\n".format(l, t)
+    else: pres_list += "<dt>{}</dt>\n".format(t)
+
+    pres_list += "<dd>{}</dd>\n\n".format(o)
+
+pres_list += "</dl>\n\n"
+
+### ---------------------------------------------- ###
+### ---------- Write to html and close  ---------- ###
+### ---------------------------------------------- ###
 
 for line in tf:
-    dh.write(line.replace("@@pub-list@@", ostr).replace("@@year-index@@", year_index).replace("@@sub-index@@", "").replace("permalink: /pubs", "permalink: /publications-by-year"))
-    
+    dh.write(line.replace("@@pub-list@@", papers_list).replace("@@pres-list@@", pres_list).replace("permalink: /pubs", "permalink: /publications-and-pres")) #.replace("@@year-index@@", year_index).replace("@@sub-index@@", "")
 
 dh.close()
 tf.close()
+
+
+
+
+
+
+
+
+
+
+# by year
+# years = list(set([p.year for p in papers])) + list(set([pr.year for pr in pres]))
+# years.sort(reverse=True)
+
+# print(years)
+
+# year_index = "<ul>\n"
+# for n, y in enumerate(years):
+#     if n % 3 == 0:
+#         year_index += "<li>"
+#     else:
+#         year_index += "&nbsp;&nbsp;&nbsp;"
+
+#     year_index += "<a href='#{}'>{}</a>".format(y, y)
+
+#     if n % 3 == 2:
+#         year_index += "</li>\n"
+
+# if not len(year_index) % 3 == 0: 
+#     year_index += "</li>\n"
+
+# year_index += "</ul>\n"
+
+
+# year_index = "<ul>\n"
+# for n, y in enumerate(years):
+#     if n % 3 == 0:
+#         year_index += "<li>"
+#     else:
+#         year_index += "&nbsp;&nbsp;&nbsp;"
+
+#     year_index += "<a href='#{}'>{}</a>".format(y, y)
+
+#     if n % 3 == 2:
+#         year_index += "</li>\n"
+
+# if not len(year_index) % 3 == 0: 
+#     year_index += "</li>\n"
+
+# year_index += "</ul>\n"
+
+
 
 # # by subject
 # tf = open("pub_template.html", "r")
@@ -93,29 +158,29 @@ tf.close()
 
 
 # # now loop over subject
-# ostr = ""
+# papers_list = ""
 # for s in sorted(papers_by_subj, key=str.lower):
 #     ps = papers_by_subj[s]
 #     ps.sort(reverse=True)
 
-#     ostr += "<p><h2><a name='{}'></a>{}</h2>\n".format(s.replace(" ", "_").replace(":", ""), s)
-#     ostr += "<dl>\n"
+#     papers_list += "<p><h2><a name='{}'></a>{}</h2>\n".format(s.replace(" ", "_").replace(":", ""), s)
+#     papers_list += "<dl>\n"
 
 #     for p in ps:
 
 #         t, o, l = p.jstring()
 #         if not l == "":
-#             ostr += "<dt><a href='{}'>{}</a></dt>\n".format(l, t)
+#             papers_list += "<dt><a href='{}'>{}</a></dt>\n".format(l, t)
 #         else:
-#             ostr += "<dt>{}</dt>\n".format(t)
+#             papers_list += "<dt>{}</dt>\n".format(t)
 
-#         ostr += "<dd>{}</dd>\n".format(o)
+#         papers_list += "<dd>{}</dd>\n".format(o)
 
-#     ostr += "</dl>\n"
+#     papers_list += "</dl>\n"
 
 # for line in tf:
-#     dh.write(line.replace("@@pub-list@@", ostr).replace("@@year-index@@", "").replace("@@sub-index@@", sub_index),replace("permalink: /pubs", "permalink: /publications-by-topic"))
+#     dh.write(line.replace("@@pub-list@@", papers_list).replace("@@year-index@@", "").replace("@@sub-index@@", sub_index),replace("permalink: /pubs", "permalink: /publications-by-topic"))
 
-dh.close()
-tf.close()
+# dh.close()
+# tf.close()
 
