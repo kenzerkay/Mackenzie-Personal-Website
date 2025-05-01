@@ -1,40 +1,54 @@
 
-.navbar{
-    background-color: rgba(150, 5, 90, 0.35); 
-    --bs-navbar-color: black;
-    --bs-navbar-active-color: black;
-    --bs-navbar-hover-color: black;
+:root{
+    --text-clr: #000000;
+    --bkground: #ffffff;
+    --accent: rgba(151, 5, 89, 0.75);
 }
 
-html, body{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to right, rgba(255, 105, 180, 0.5), rgba(138, 43, 226, 0.5)); /* Gradient for the border */
-    z-index: -1;
-    position: relative;
-    padding: 5px;
-    background-color: #fff; /* Solid background color */
-}  
-
-.footer{
-    background-color:rgba(150, 5, 90, 0.35); 
+/* Base styles */
+html, body {
+  background-color: var(--bkground);
+  color: var(--text-clr);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 5px;
 }
 
+/* Navbar */
+.navbar {
+  background-color: var(--accent);
+  padding: 1rem 2rem;
+  text-align: center;
+}
 
-h1 {color: black; font-size: 45px;}
-h2 {color: black; font-size: 35px;}
-h3 {color: black; font-size: 30px;}
-h4 {color: black; font-size: 25px;}
-p  {color: black; font-size: 18px;}
+.navbar a {
+  color: var(--text-clr);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-/* h1{color: rgba(150, 5, 90, 1); font-size: 45px;}
-h2{color: rgba(220, 80, 150, 0.75); font-size: 35px;}
-h3{color: rgba(255, 80, 190, 0.75); font-size: 30px;}
-h4{color: rgba(255, 110, 190, 0.75); font-size: 25px;}
-p {color: rgb(60, 60, 60); font-size: 18px;} */
+.navbar a:hover {
+  color: #ffe3f0; 
+}
+
+/* Footer */
+footer {
+  background-color: var(--accent);
+  color: var(--bkground);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 2px solid #b36284;
+  margin-top: 2rem;
+}
+
+h1 {color: var(--text-clr); font-size: 45px;}
+h2 {color: var(--text-clr); font-size: 35px;}
+h3 {color: var(--text-clr); font-size: 30px;}
+h4 {color: var(--text-clr); font-size: 25px;}
+p  {color: var(--text-clr); font-size: 18px;}
 
 .grid-container {
     display: grid;
@@ -53,6 +67,129 @@ p {color: rgb(60, 60, 60); font-size: 18px;} */
 
 
 
+
+
+
+
+
+
+/* h1{color: rgba(150, 5, 90, 1); font-size: 45px;}
+h2{color: rgba(220, 80, 150, 0.75); font-size: 35px;}
+h3{color: rgba(255, 80, 190, 0.75); font-size: 30px;}
+h4{color: rgba(255, 110, 190, 0.75); font-size: 25px;}
+p {color: rgb(60, 60, 60); font-size: 18px;} */
+
+
+
+/* body {
+    background-color: #0d0d1a;
+    background-image: url('/assets/starfield.png'); 
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: ;
+    font-family: 'Inter', sans-serif;
+  } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .navbar{
+    background-color: rgba(150, 5, 90, 0.35); 
+    --bs-navbar-color: ;
+    --bs-navbar-active-color: ;
+    --bs-navbar-hover-color: ;
+}
+
+html, body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(255, 105, 180, 0.5), rgba(138, 43, 226, 0.5)); 
+    z-index: -1;
+    position: relative;
+    padding: 5px;
+    background-color: #fff;
+}  
+
+.footer{
+    background-color:rgba(150, 5, 90, 0.35); 
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.navbar{
+    background-color: rgba(150, 5, 90, 0.35); 
+    --bs-navbar-color: ;
+    --bs-navbar-active-color: ;
+    --bs-navbar-hover-color: ;
+}
+
+html, body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(255, 105, 180, 0.5), rgba(138, 43, 226, 0.5));
+    z-index: -1;
+    position: relative;
+    padding: 5px;
+    background-color: #fff; 
+
+.footer{
+    background-color:rgba(150, 5, 90, 0.35); 
+}
+
+h1 {color: ; font-size: 45px;}
+h2 {color: ; font-size: 35px;}
+h3 {color: ; font-size: 30px;}
+h4 {color: ; font-size: 25px;}
+p  {color: ; font-size: 18px;}
+
+h1{color: rgba(150, 5, 90, 1); font-size: 45px;}
+h2{color: rgba(220, 80, 150, 0.75); font-size: 35px;}
+h3{color: rgba(255, 80, 190, 0.75); font-size: 30px;}
+h4{color: rgba(255, 110, 190, 0.75); font-size: 25px;}
+p {color: rgb(60, 60, 60); font-size: 18px;} 
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+
+}
+.grid-item {
+    padding: 10px 10px 10px 0px;
+    text-align: left;
+}
+
+
+ */
 
 
 
