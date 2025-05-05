@@ -2,7 +2,7 @@
 :root{
     --text-clr: #000000;
     --bkground: #ffffff;
-    --accent: rgba(151, 5, 89, 0.75);
+    --accent: rgba(151, 5, 89, 0.65);
 }
 
 /* Base styles */
