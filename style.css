@@ -34,6 +34,29 @@ html, body {
   color: var(--accent-plum);
 }
 
+/* Show dropdown on hover for desktop (matches navbar-expand-lg breakpoint) */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+/* Nested dropdown (submenu) styles */
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+}
+@media (min-width: 992px) {
+  .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+  }
+}
+
 /* Footer */
 footer {
   background-color: var(--accent-pink);

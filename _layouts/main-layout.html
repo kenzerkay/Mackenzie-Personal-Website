@@ -32,10 +32,26 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"> <a class="nav-link" href="/Mackenzie-Personal-Website/"> <i class="fas fa-home"></i> </a></li>
+          <li class="nav-item"> <a class="nav-link" href="/"> <i class="fas fa-home"></i> </a></li>
           <li class="nav-item"> <a class="nav-link" href="./Research">Research</a></li>
           <li class="nav-item"> <a class="nav-link" href="./publications-and-presentations">Publications and Presentations</a></li>
           <li class="nav-item"> <a class="nav-link" href="./leadership-and-outreach">Academic, Outreach, and Leadership Experience</a></li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="./teaching" id="teachingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Teaching</a>
+            <ul class="dropdown-menu" aria-labelledby="teachingDropdown">
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="./certification-in-college-teaching" id="certSubDropdown">Certification in College Teaching</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./competency1">Competency 1</a></li>
+                  <li><a class="dropdown-item" href="./competency2">Competency 2</a></li>
+                  <li><a class="dropdown-item" href="./competency3">Competency 3</a></li>
+                  <li><a class="dropdown-item" href="./competency4">Competency 4</a></li>
+                  <li><a class="dropdown-item" href="./competency5">Competency 5</a></li>
+                </ul>
+              </li>
+              <li><a class="dropdown-item" href="./teaching-philosophy">Teaching Philosophy</a></li>
+            </ul>
+          </li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="nav-item"> <a class="nav-link" href="./CV"> Download CV</a></li>
@@ -48,6 +64,22 @@
   {% if page.content_style == "github_markdown" %} <div class="uk-container markdown-body">
   {% else %} <div class="uk-container">
   {% endif %} {{ content }}
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    // Ensure clicking the dropdown toggle navigates to the linked page on desktop widths.
+    ['teachingDropdown','certSubDropdown'].forEach(function(id){
+      var toggle = document.getElementById(id);
+      if(!toggle) return;
+      toggle.addEventListener('click', function(e){
+        if(window.innerWidth >= 992){
+          e.stopImmediatePropagation();
+          window.location.href = this.getAttribute('href');
+        }
+      }, true);
+    });
+  });
+  </script>
 </body>
 
 <!-- Footer -->
