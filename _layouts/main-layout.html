@@ -61,13 +61,14 @@
       </div>
     </div>
   </nav>
+    <div class="site-container">
+    <!-- Determines Page Content -->
+    {% if page.content_style == "github_markdown" %} <div class="uk-container markdown-body">
+    {% else %} <div class="uk-container">
+    {% endif %} {{ content }}
+    </div>
 
-  <!-- Determines Page Content -->
-  {% if page.content_style == "github_markdown" %} <div class="uk-container markdown-body">
-  {% else %} <div class="uk-container">
-  {% endif %} {{ content }}
-
-  <script>
+    <script>
   document.addEventListener('DOMContentLoaded', function(){
     // Ensure clicking the dropdown toggle navigates to the linked page on desktop widths.
     ['teachingDropdown','certSubDropdown'].forEach(function(id){
@@ -82,6 +83,7 @@
     });
   });
   </script>
+  </div>
 </body>
 
 <!-- Footer -->

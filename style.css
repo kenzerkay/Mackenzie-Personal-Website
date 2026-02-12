@@ -12,16 +12,25 @@ html, body {
   background-color: var(--bkground);
   color: var(--text-clr);
   font-family: 'ubuntu', sans-serif;
-  margin: 0;
-  padding: 5px;
+  margin: 5px;
 }
+
+/* Page wrapper to keep content between navbar and footer centered */
+.site-container {
+  /* margin: 0 auto; */
+  padding: 0rem 4rem 0rem 4rem;
+}
+
+/* @media (max-width: 768px) {
+  .site-container { padding: 0; }
+} */
 
 /* Navbar */
 .navbar {
   background-color: var(--accent-pink);
   padding: 1rem 0rem;
   text-align: center;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
 
 .navbar a {
@@ -61,9 +70,9 @@ html, body {
 footer {
   background-color: var(--accent-pink);
   text-align: center;
-  padding: 1rem;
+  /* padding: 1rem; */
   font-size: 0.9rem;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
 /* Footer icon hover effect */
