@@ -1,4 +1,18 @@
-_site
+# Jekyll and build artifacts
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+/vendor/bundle
+
+# OS files
+.DS_Store
+
+# Editor files
+.vscode/
+*.swp_site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
