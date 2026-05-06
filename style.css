@@ -96,3 +96,17 @@ p  {color: var(--text-clr);    font-size: 18px;}
     padding: 10px 10px 10px 0px;
     text-align: left;
 }
+
+/* Ensure all images have a consistent margin */
+img {
+  margin: 2rem;
+}
+
+/* Ensure embedded PDFs and PDF iframes have consistent margins */
+embed[type="application/pdf"],
+embed[src$=".pdf"],
+object[type="application/pdf"],
+iframe[src$=".pdf"] {
+  margin: 2rem !important;
+  display: block;
+}

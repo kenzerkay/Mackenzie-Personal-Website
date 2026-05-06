@@ -17,7 +17,7 @@ for pr in pres: print(pr)
 
 # sorted by date
 tf = open("pub_template.html", "r")
-dh = open("publications-and-pres.html", "w")
+dh = open("publications-and-presentations.html", "w")
 
 ### ---------------------------------------------- ###
 ### ------------ Iterate over Papers ------------- ###
@@ -78,7 +78,7 @@ pres_list += "</dl>\n\n"
 ### ---------------------------------------------- ###
 
 for line in tf:
-    dh.write(line.replace("@@pub-list@@", papers_list).replace("@@pres-list@@", pres_list).replace("permalink: /pubs", "permalink: /publications-and-pres")) #.replace("@@year-index@@", year_index).replace("@@sub-index@@", "")
+    dh.write(line.replace("@@pub-list@@", papers_list).replace("@@pres-list@@", pres_list).replace("permalink: /pubs", "permalink: /publications-and-presentations")) #.replace("@@year-index@@", year_index).replace("@@sub-index@@", "")
 
 dh.close()
 tf.close()
